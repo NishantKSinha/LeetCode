@@ -25,6 +25,7 @@ public:
                 ans[pos] = temp;
                 temp.clear();
                 count++;
+                idx++;
         for(int i = 0;i<=count;i++){
             if(i == 0) continue;
             temp+=ans[i];
