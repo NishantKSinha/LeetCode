@@ -10,8 +10,8 @@
  */
 class Solution {
 public:
-    ListNode* middleNode(ListNode* head) {
-        if(head == NULL || head -> next == NULL){
+  ListNode* middleNode(ListNode* head) {
+/*        if(head == NULL || head -> next == NULL){
             return head ;
         }
         ListNode *temp = head ;
@@ -35,7 +35,17 @@ public:
             k++;
         }
         return prev;
-
+*/ 
+    // by tortoise method
+    
+    ListNode *fast = head ;
+    ListNode *slow = head ;
+    
+    while(fast != NULL && fast->next != NULL ){
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
         
     }
 };
