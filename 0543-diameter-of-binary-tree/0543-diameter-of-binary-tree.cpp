@@ -29,7 +29,7 @@ public:
         diameter=max(diameter , ans1);
         dia(root->left,diameter);
         dia(root->right,diameter);
-        return ;
+        
     }
     int diameterOfBinaryTree(TreeNode* root) {
       int diameter=0;
