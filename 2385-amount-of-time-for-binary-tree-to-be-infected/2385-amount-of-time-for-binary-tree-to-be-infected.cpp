@@ -62,7 +62,7 @@ public:
                     visited[parent[temp]] = true;
                 }
             }
-            timeburn = timeburn + 1;
+            timeburn++;
             
         }
         return timeburn;
