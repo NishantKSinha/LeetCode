@@ -26,8 +26,10 @@ public:
                 startindex = l;
             }
             mpp[s[l]]++;
+      
             if(mpp[s[l]] > 0) cnt = cnt-1;
             l = l+1;
+           
         }
         r++;
       }
