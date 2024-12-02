@@ -24,9 +24,10 @@ public:
         for (auto it : graph[node]) {
             if (col[it] == -1) { // If unvisited
                 col[it] = !col[node]; // Assign opposite color to the adjacent node
-                if (!dfs(it, graph, col)) { // Recursively visit the neighbor
+                if (dfs(it, graph, col)==false) { // Recursively visit the neighbor
                     return false;
                 }
+                else dfs(it, graph, col);
             } else if (col[it] == col[node]) { // If the same color is found on adjacent nodes
                 return false;
             }
