@@ -3,7 +3,7 @@ public:
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
         //we will first create directed graph which can be done by creating adjacency list
         int V = numCourses;
-       vector<vector<int>> adj(V);
+       vector<int> adj[V]; 
         
         for(auto it : prerequisites){
             adj[it[1]].push_back(it[0]); //here we have given to take course 0 we have to visit course 1 first
