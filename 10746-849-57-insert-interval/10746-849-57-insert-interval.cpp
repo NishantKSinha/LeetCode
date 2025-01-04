@@ -4,20 +4,20 @@ public:
          int n = intervals.size();
         int i = 0;
         vector<vector<int>>result;
-
+           //left part
         while(i<n && intervals[i][1] < newInterval[0]){
             result.push_back(intervals[i]);
             i += 1;
         }
-
-        while(i<n && intervals[i][0] <= newInterval[1]){
+          //middle part or overlapping part
+        while(i<n && intervals[i][0] <= newInterval[1] && intervals[i][1] >= newInterval[0]){
             newInterval[0] = min(newInterval[0],intervals[i][0]);
             newInterval[1] = max(newInterval[1],intervals[i][1]);
             i++;
         }
-            result.push_back(newInterval);
-
-        while(i<n){
+            result.push_back(newInterval); //we write outside bcz if its not overlap then write directly
+         //right part
+        while(i<n && intervals[i][0] > newInterval[1]){
             result.push_back(intervals[i]);
             i++;
         }
